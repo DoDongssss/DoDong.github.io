@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    @apply font-sans m-0 p-0 box-border bg-slate-200;
+}
+
+@layer base {
+
+}
+
+@layer components {
+    .global-container{
+        @apply px-16;
+    }
+    .header-container{
+        @apply h-[70px] w-full flex items-end justify-between;
+    }
+    .nav-wrapper{
+        @apply flex flex-row gap-8;
+    }
+    .home-container{
+        @apply h-[calc(100vh-70px-50px)] flex flex-row;
+    }
+    .left-content-wrapper{
+        @apply h-full w-[50%] flex items-center justify-center 
+    }
+    .right-content-wrapper{
+        @apply h-full w-[50%] flex items-center justify-center gap-2
+    }
+    .footer-container{
+        @apply h-[50px] flex flex-row items-start justify-between gap-6;
+    }
+    .social-wrapper{
+        @apply flex flex-row gap-4
+    }
+    .social-item{
+        @apply list-none
+    }
+    .social-icon{
+        @apply text-slate-700 text-lg cursor-pointer hover:text-red-700
+    }
+}
+
+@layer utilities {
+    .profile_image{
+        @apply h-[300px] w-[150px] rounded-sm  skew-x-[-13deg] border border-gray-100 grayscale-[50%] transition-all;
+    }
+    .profile_image.a{
+        @apply bg-[url('/public/images/1.jpg')] bg-no-repeat bg-center bg-cover;
+    }
+    .profile_image.b{
+        @apply h-[350px] w-[200px] bg-[url('/public/images/2.jpg')] bg-no-repeat bg-center bg-cover;
+    }
+    .profile_image.c{
+        @apply bg-[url('/public/images/3.jpg')] bg-no-repeat bg-center bg-cover;
+    }
+    .profile_image:hover{
+        @apply max-w-[200px] min-w-[180px] z-10 scale-[1.4] skew-x-0 grayscale-0 transition-all;
+    }
+    .nav-item{
+        @apply inline-block relative font-bold text-base text-slate-600 tracking-wide cursor-pointer list-none;
+    }
+    .nav-item:hover{
+        @apply text-red-600 transition-colors   
+    }
+    .nav-item::before{
+        @apply content-[''] absolute left-0 bottom-0 w-[100%] h-[2px] bg-red-600 origin-left rounded-sm transition-all;
+        scale: 0;
+    }
+    .nav-item:hover::before{
+        /* @apply scale-100; */
+        scale: 1;
+    }
+}
+
